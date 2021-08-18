@@ -1,0 +1,387 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:wght@700;900&display=swap");
+body {
+  overflow-x: hidden;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.top {
+  transform: translateY(-80px);
+}
+
+.block {
+  display: block;
+}
+
+.none {
+  display: none;
+}
+
+.Xaxis {
+  right: 50px;
+  top: 0.2px;
+}
+
+header {
+  width: 100%;
+  height: 90vh;
+  background-image: url("../../images/desktop/image-header.jpg");
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  color: white;
+}
+header .container nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+header .container nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .container nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-family: "Barlow", sans-serif;
+  padding: 10px 25px;
+  border-radius: 100px;
+  transition: all ease 0.1s;
+}
+header .container nav ul li a:hover {
+  font-family: "Franceus", sans-serif;
+  font-weight: 900;
+  background: rgba(255, 255, 255, 0.5);
+  color: white;
+}
+header .container nav .heading {
+  font-family: "Franceus", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 900;
+}
+header .container nav ul .menu-sidebar {
+  display: none;
+}
+header .container nav ul .menu-sidebar div {
+  background: white;
+  width: 30px;
+  height: 2px;
+  border-radius: 2px;
+  margin-top: 5px;
+}
+header .container .creatives {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 20px;
+}
+header .container .creatives h1 {
+  font-size: 4rem !important;
+  text-transform: uppercase;
+  font-family: "Barlow", sans-serif;
+  font-weight: 600;
+}
+main {
+  font-family: "Fraunces", sans-serif;
+  display: grid;
+  grid-template-areas: "first first first" "second second second" "last last last";
+}
+main .brand,
+main .stand,
+main .fruit {
+  width: 100vw;
+  height: 120vh;
+}
+main .brand {
+  grid-area: first;
+  display: flex;
+}
+main .brand .container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  background-color: white;
+}
+main .brand .container p {
+  color: #818498;
+}
+main .brand .container a {
+  text-decoration: none;
+  font-size: 1.3rem;
+  color: #23303e;
+}
+main .brand .container a:hover {
+  text-decoration: underline #fad400 3px;
+}
+main .brand .egg {
+  height: 100%;
+  width: 100%;
+  background-image: url("../../images/desktop/image-transform.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+main .stand {
+  grid-area: second;
+  display: flex;
+  flex-direction: row-reverse;
+}
+main .stand .container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  background-color: white;
+}
+main .stand .container h1 {
+  padding-bottom: 10px;
+}
+main .stand .container p {
+  color: #818498;
+}
+main .stand .container a {
+  text-decoration: none;
+  font-size: 1.3rem;
+  color: #23303e;
+}
+main .stand .container a:hover {
+  text-decoration: underline #fe7867 3px;
+}
+main .stand .out {
+  width: 103.8%;
+  height: 100%;
+  background-image: url("../../images/desktop/image-stand-out.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+main .fruit {
+  grid-area: last;
+  display: flex;
+}
+main .fruit .first {
+  background-image: url("../../images/desktop/image-graphic-design.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-items: flex-end !important;
+  text-align: center;
+  width: 66.6%;
+}
+main .fruit .second {
+  background-image: url("../../images/desktop/image-photography.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-items: flex-end !important;
+  text-align: center;
+}
+
+.testimonials {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 150px 0;
+}
+.testimonials h2 {
+  font-family: "Fraunces", sans-serif;
+  color: #818498;
+}
+.testimonials .container {
+  display: grid;
+  height: 100%;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.testimonials .container .first p,
+.testimonials .container .second p,
+.testimonials .container .third p {
+  color: #5a636c;
+  font-size: 1.2rem;
+  padding: 30px 0;
+}
+.testimonials .container .first img,
+.testimonials .container .second img,
+.testimonials .container .third img {
+  border-radius: 50%;
+  transform: scale(0.5);
+}
+.testimonials .container .first h3,
+.testimonials .container .second h3,
+.testimonials .container .third h3 {
+  color: #23303e;
+  font-family: "Fraunces", sans-serif;
+}
+.testimonials .container .first h6,
+.testimonials .container .second h6,
+.testimonials .container .third h6 {
+  color: #a7abae;
+  font-family: "Barlow", sans-serif;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.gallery img {
+  width: 100%;
+}
+
+footer {
+  width: 100%;
+  height: 50vh;
+  background-color: #458c7e;
+  font-family: "Barlow", sans-serif;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+footer .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+footer .container h1 {
+  color: #25564b;
+}
+footer .container ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  list-style: none;
+}
+footer .container ul ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer .container ul ul li a {
+  text-decoration: none;
+  color: white;
+  font-family: "Barlow", sans-serif;
+  padding: 10px 25px;
+  border-radius: 100px;
+  transition: all ease 0.1s;
+}
+footer .container ul ul li a:hover {
+  font-family: "Franceus", sans-serif;
+  font-weight: 900;
+  background: rgba(255, 255, 255, 0.5);
+  color: white;
+}
+footer .container ul li {
+  margin-left: 20px;
+  font-size: 1.3rem;
+  color: #25564b;
+  cursor: pointer;
+}
+footer .container ul li:hover {
+  color: white;
+}
+footer .container ul li img:hover {
+  color: white;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: #3e52a3;
+}
+
+@media screen and (max-width: 576px) {
+  header {
+    margin: auto !important;
+  }
+  header nav ul {
+    position: relative;
+    flex-direction: column;
+  }
+  header nav ul li {
+    top: 200px;
+    right: 180px;
+    position: relative;
+    margin-top: 20px !important;
+  }
+  header nav ul li a {
+    font-size: 1.5rem;
+    color: #818498 !important;
+  }
+  header nav ul li a:hover {
+    background: #fad400 !important;
+    color: black !important;
+  }
+  header nav ul .menu-sidebar {
+    display: block !important;
+    position: absolute;
+    cursor: pointer;
+  }
+  header .creatives {
+    text-align: center;
+  }
+
+  main .brand {
+    flex-direction: column-reverse;
+  }
+  main .brand .container h1 {
+    font-size: 2.3rem;
+  }
+  main .stand {
+    flex-direction: column-reverse;
+  }
+  main .fruit {
+    flex-direction: column;
+    height: 120vh !important;
+  }
+  main .fruit .first,
+main .fruit .second {
+    width: 100%;
+    height: 100% !important;
+    background-size: cover;
+    background-position: top;
+  }
+
+  .testimonials {
+    height: 100%;
+    padding: 80px 0;
+  }
+  .testimonials .container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/*# sourceMappingURL=output.css.map */

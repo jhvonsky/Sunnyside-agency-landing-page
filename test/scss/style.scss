@@ -1,0 +1,111 @@
+// Common Mixin
+
+@mixin reset {
+    *,*::before,*::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+}
+
+@mixin reset-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+@mixin horizontal-list {
+    @include reset-list;
+
+    li {
+        display: inline-block;
+        margin: {
+            left: -2px;
+            right: 2em;
+        }
+    }
+}
+
+@mixin full {
+    width: 100vw;
+    height: 100vh;
+}
+
+@mixin flex {
+    @include full();
+    
+    div {
+        @include full();
+        display:flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+html {@include reset()}
+
+body {overflow-x: hidden;}
+
+nav ul {@include horizontal-list()}
+
+// section{@include flex()}
+
+// Argumets Mixin
+
+@mixin div($width,$height,$color) {
+    width: $width;
+    height: $height;
+    background-color: $color;
+    margin: auto;
+}
+
+// .main {
+//     @include div(200px,200px,black)
+// }
+
+// Optional Arguments Mixin
+
+@mixin div($width,$height,$color:green) {
+    width: $width;
+    height: $height;
+    background-color: $color;
+    margin: auto;
+}
+
+.main {
+    @include div(200px,200px,teal)
+}
+
+@mixin flex-back($url,$sized,$repeat) {
+    @include full();
+    background: {
+        image: url($url);
+        size: $sized;
+        repeat: $repeat;
+    };
+
+    div {
+        display:flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+// .third {
+//     @include flex();
+//     @include flex-back('../../images/desktop/image-photography.jpg',cover,no-repeat);
+// }
+
+@mixin rounded($size,$radius:10px) {
+    width: $size;
+    height: $size;
+    background: yellow;
+
+    @if ($radius != 0) {
+        border-radius: $radius;
+    }
+}
+
+.round {
+    @include rounded(200px,50%)
+}

@@ -1,0 +1,387 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:wght@700;900&display=swap');
+
+$Very-dark-desaturated-blue: hsl(212, 27%, 19%);
+$Very-dark-grayish-blue: hsl(213, 9%, 39%);
+$Dark-grayish-blue: hsl(232, 10%, 55%);
+$Grayish-blue: hsl(210, 4%, 67%);
+$White: hsl(0, 0%, 100%);
+$Soft-red: hsl(7, 99%, 70%);
+$Yellow: hsl(51, 100%, 49%);
+$Dark-desaturated-cyan: hsl(167, 40%, 24%);
+$Dark-blue: hsl(198, 62%, 26%);
+$Dark-moderate-cyan: hsl(168, 34%, 41%);
+
+// Mixin
+
+@mixin flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin set-background($url,$pos:center) {
+    background: {
+        image: url($url);
+        size: cover;
+        position: $pos;
+        repeat: no-repeat;
+    };
+}
+
+@mixin reset-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    ul {
+        list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            li {
+                a {
+                    text-decoration: none;
+                    color: $White;
+                    font-family: 'Barlow',sans-serif;
+                    padding: 10px 25px;
+                    border-radius: 100px;
+                    transition: all ease .1s;
+                }
+                a:hover {
+                    font-family: 'Franceus',sans-serif;
+                    font-weight: 900;
+                    background: rgba($color: #ffffff, $alpha: 0.5);
+                    color: $White;
+                }
+            }
+    }
+}
+
+body {
+    overflow-x: hidden;
+}
+
+// Reset
+*,*::before,*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// Additional Classes
+.top {transform: translateY(-80px);}
+.block {display: block;}
+.none {display: none;}
+.Xaxis {
+    right: 50px;
+    top: .2px;
+}
+
+// Header
+
+header {
+    width: 100%;
+    height: 90vh;
+    @include set-background(('../../images/desktop/image-header.jpg'),bottom);
+    color: $White;
+    .container {
+        nav {
+            @include reset-nav();
+            .heading {
+                font-family: 'Franceus',sans-serif;
+                font-size: 2.5rem;
+                font-weight: 900;
+            }
+            ul {
+                .menu-sidebar {
+                    display: none;
+                    div {
+                        background: $White;
+                        width: 30px;
+                        height: 2px;
+                        border-radius: 2px;
+                        margin: {
+                            top: 5px
+                        };
+                    }
+                }
+            }
+        }
+        .creatives {
+            @include flex();
+            flex-direction: column;
+            padding-top: 20px;
+            h1 {
+                font-size: 4rem !important;
+                text-transform: uppercase;
+                font-family: "Barlow", sans-serif;
+                font-weight: 600;
+            }
+            img {
+                padding: {
+                    // top: 50px;
+                };
+            }
+        }
+    }
+}
+
+// Main
+
+main {
+    font-family: 'Fraunces',sans-serif;
+    display: grid;
+    grid-template-areas:
+    "first first first"
+    "second second second"
+    "last last last"
+    ;
+    .brand,
+    .stand,
+    .fruit {
+        width: 100vw;
+        height: 120vh;
+    }
+    .brand {
+        grid-area: first;
+        display: flex;
+        .container{
+            height: 100%;
+            width: 100%;
+            @include flex();
+            flex-direction: column;
+            text-align: center;
+            background-color: $White;
+            p {
+                color: $Dark-grayish-blue;
+            }
+            a {
+                text-decoration: none;
+                font-size: 1.3rem;
+                color: $Very-dark-desaturated-blue;
+            }
+            a:hover {
+                text-decoration: underline $Yellow 3px;
+            }
+        }
+        .egg {
+            height: 100%;
+            width: 100%;
+            @include set-background('../../images/desktop/image-transform.jpg')
+        }
+        
+    }
+    .stand {
+        grid-area: second;
+        display: flex;
+        flex-direction: row-reverse;
+        .container {
+            height: 100%;
+            width: 100%;
+            @include flex();
+            flex-direction: column;
+            text-align: center;
+            background-color: $White;
+            h1 {
+                padding-bottom: 10px;
+            }
+            p {
+                color: $Dark-grayish-blue;
+            }
+            a {
+                text-decoration: none;
+                font-size: 1.3rem;
+                color: $Very-dark-desaturated-blue;
+            }
+            a:hover {
+                text-decoration: underline $Soft-red 3px;
+            }
+        }
+        .out {
+            width: 103.8%;
+            height: 100%;
+            @include set-background('../../images/desktop/image-stand-out.jpg')
+        }
+    }
+    .fruit {
+        grid-area: last;
+        display: flex;
+        .first {
+            @include set-background('../../images/desktop/image-graphic-design.jpg');
+            @include flex();
+            align-items: flex-end !important;
+            text-align: center;
+            width: 66.6%;
+        }
+        .second {
+            @include set-background('../../images/desktop/image-photography.jpg');
+            @include flex();
+            align-items: flex-end !important;
+            text-align: center;
+        }
+    }
+}
+
+// Testimonials
+.testimonials {
+    height: 100vh;
+    @include flex();
+    flex-direction: column;
+    text-align: center;
+    padding: 150px 0;
+    h2 {
+        font-family: 'Fraunces',sans-serif;
+        color: $Dark-grayish-blue;
+    }
+    .container {
+        display: grid;
+        height: 100%;
+        grid-template-columns: repeat(3,1fr);
+        gap: 20px;
+        .first,
+        .second,
+        .third {
+            p {
+                color: $Very-dark-grayish-blue;
+                font-size: 1.2rem;
+                padding: 30px 0;
+            }
+            img {
+                border-radius: 50%;
+                transform: scale(.5);
+            }
+            h3 {
+                color: $Very-dark-desaturated-blue;
+                font-family: 'Fraunces',sans-serif;
+            }
+            h6 {
+                color: $Grayish-blue;
+                font-family: 'Barlow',sans-serif;
+            }
+        }
+    }
+}
+
+// Gallery
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    img {
+        width: 100%;
+    }
+}
+
+// Footer
+footer {
+    width: 100%;
+    height: 50vh;
+    background-color: $Dark-moderate-cyan;
+    font-family: 'Barlow',sans-serif;
+    font-weight: 600;
+    @include flex();
+    .container {
+        @include flex();
+        flex-direction: column;
+        h1 {
+            color: $Dark-desaturated-cyan;
+        }
+        ul {
+            @include reset-nav();
+            list-style: none;
+            li {
+                margin-left: 20px;
+                font-size: 1.3rem;
+                color: $Dark-desaturated-cyan;
+                cursor: pointer;
+            }
+            li:hover {
+                color: white;
+            }
+        }
+        ul {
+            li {
+                img:hover {
+                    color: $White;
+                }
+            }
+        }
+    }
+}
+
+// Attribute
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+// Responsive Breakpoints
+
+@media screen and (max-width:576px ) {
+    header {
+        margin: auto !important;
+        nav {
+            ul {
+                position: relative;
+                flex-direction: column;
+                li {
+                    top: 200px;
+                    right: 180px;
+                    position: relative;
+                    margin: {
+                        top: 20px !important;
+                    };
+                    a {
+                        font-size: 1.5rem;
+                        color: $Dark-grayish-blue !important;
+                    }
+                    a:hover {
+                        background: $Yellow !important;
+                        color: black !important;
+                    }
+                }
+                .menu-sidebar {
+                    display: block !important;
+                    position: absolute;
+                    cursor: pointer;
+                }
+            }
+        }
+        .creatives {
+            text-align: center;
+        }
+    }
+    main {
+        .brand {
+            flex-direction: column-reverse;
+            .container {
+                // background-color: $Yellow;
+                h1 {
+                    font-size: 2.3rem;
+                }
+            }
+        }
+        .stand {
+            flex-direction: column-reverse;
+        }
+        .fruit {
+            flex-direction: column;
+            height: 120vh !important;
+            .first,
+            .second {
+                width: 100%;
+                height: 100% !important;
+                background-size: cover;
+                background-position: top;
+            }
+
+        }
+    }
+    .testimonials {
+        height: 100%;
+        padding: 80px 0;
+        .container {
+            grid-template-columns: repeat(1,1fr);
+        }
+    }
+    .gallery {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
