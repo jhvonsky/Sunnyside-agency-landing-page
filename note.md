@@ -1,3 +1,0 @@
-# Sass & Mixins
-
-Mixins allow you to define styles that can be re-used throughout your stylesheet
